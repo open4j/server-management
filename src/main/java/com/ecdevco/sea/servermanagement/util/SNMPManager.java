@@ -16,23 +16,26 @@ import org.snmp4j.smi.OID;
 import org.snmp4j.smi.OctetString;
 import org.snmp4j.smi.VariableBinding;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
- *
  * @author navand
  */
 public class SNMPManager implements Serializable {
 
-    Snmp snmp = null;
-    String address = null;
+    private Snmp snmp = null;
+    private String address = null;
 
     /**
      * Constructor
      *
-     * @param add
+     * @param address
      */
-    public SNMPManager(String add) {
-        address = add;
+    public SNMPManager(String address) {
+        this.address = address;
     }
 
     public static void main(String[] args) throws IOException {
@@ -58,7 +61,7 @@ public class SNMPManager implements Serializable {
     public void start() throws IOException {
         TransportMapping transport = new DefaultUdpTransportMapping();
         snmp = new Snmp(transport);
-// Do not forget this line!
+        // Do not forget this line!
         transport.listen();
     }
 
@@ -75,7 +78,7 @@ public class SNMPManager implements Serializable {
             ResponseEvent event = get(new OID[]{oid});
             return event.getResponse().get(0).getVariable().toString();
         } catch (Exception ex) {
-//            ex.printStackTrace();
+            ex.printStackTrace();
             return "0";
         }
     }
