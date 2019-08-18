@@ -10,4 +10,5 @@
     <include file="changes/create-table-role-permission.xml" relativeToChangelogFile="true"/>
     <include file="changes/create-table-user.xml" relativeToChangelogFile="true"/>
     <include file="changes/create-table-user-role.xml" relativeToChangelogFile="true"/>
+    <include file="changes/insert-table-user.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

@@ -116,7 +116,7 @@ public class SNMPManager implements Serializable {
         target.setAddress(targetAddress);
         target.setRetries(2);
         target.setTimeout(1500);
-        target.setVersion(SnmpConstants.version1);
+        target.setVersion(SnmpConstants.version2c);
         return target;
     }
 
