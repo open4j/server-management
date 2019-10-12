@@ -33,10 +33,15 @@ public class CommandExecutor {
             }
             stdError = stringBuilder.toString();
 
+            process.waitFor();
             exitCode = process.exitValue();
+            System.out.println("--------");
+            System.out.println(stdInput);
+            System.out.println(stdError);
+            System.out.println("Exit code:" + exitCode);
 
             process.destroy();
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }

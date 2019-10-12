@@ -9,6 +9,9 @@ public class CPUInfo {
     private long rawIdle;
     private long rawWait;
     private long rawKernel;
+    private long rawInterrupts;
+    private long rawSoftIRQ;
+    private long rawSteal;
 
     public long getIdle() {
         return idle;
@@ -64,5 +67,29 @@ public class CPUInfo {
 
     public void setRawKernel(long rawKernel) {
         this.rawKernel = rawKernel;
+    }
+
+    public long getRawInterrupts() {
+        return rawInterrupts;
+    }
+
+    public void setRawInterrupts(long rawInterrupts) {
+        this.rawInterrupts = rawInterrupts;
+    }
+
+    public long getRawSoftIRQ() {
+        return rawSoftIRQ;
+    }
+
+    public void setRawSoftIRQ(long rawSoftIRQ) {
+        this.rawSoftIRQ = rawSoftIRQ;
+    }
+
+    public long getRawSteal() {
+        return rawSteal;
+    }
+
+    public void setRawSteal(long rawSteal) {
+        this.rawSteal = rawSteal;
     }
 }

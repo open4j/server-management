@@ -21,6 +21,7 @@ public class SatrapClient {
             objectInputStream = new ObjectInputStream(socket.getInputStream());
             objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
 
+            System.out.println("Connection Created");
             return true;
 
         } catch (IOException e) {
@@ -33,6 +34,7 @@ public class SatrapClient {
         try {
             objectOutputStream.writeObject(trigger);
             objectOutputStream.flush();
+            System.out.println("Object writed");
 
             return true;
 

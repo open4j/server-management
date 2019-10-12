@@ -51,17 +51,17 @@ public class SwitchService {
     }
 
     public boolean startSwitch() {
-        commandExecutor.execute("systemctl start satrap");
+        commandExecutor.execute("sudo systemctl start satrap");
         return commandExecutor.getExitCode() == 0;
     }
 
     public boolean stopSwitch() {
-        commandExecutor.execute("systemctl stop satrap");
+        commandExecutor.execute("sudo systemctl stop satrap");
         return commandExecutor.getExitCode() == 0;
     }
 
     public boolean restartSwitch() {
-        commandExecutor.execute("systemctl restart satrap");
+        commandExecutor.execute("sudo systemctl restart satrap");
         return commandExecutor.getExitCode() == 0;
     }
 

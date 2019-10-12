@@ -56,6 +56,9 @@ public class ServerService {
             cpuInfo.setRawSystem(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.4.1.2021.11.52.0"))));
             cpuInfo.setRawUser(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.4.1.2021.11.50.0"))));
             cpuInfo.setRawWait(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.4.1.2021.11.54.0"))));
+            cpuInfo.setRawInterrupts(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.4.1.2021.11.59.0"))));
+            cpuInfo.setRawSoftIRQ(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.4.1.2021.11.61.0"))));
+            cpuInfo.setRawSteal(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.4.1.2021.11.64.0"))));
 
         } catch (Exception ex) {
 
