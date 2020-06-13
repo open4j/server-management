@@ -8,6 +8,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
+import java.io.IOException;
+
 @SpringBootApplication
 public class ServerManagementApplication extends SpringBootServletInitializer {
 
@@ -19,7 +21,7 @@ public class ServerManagementApplication extends SpringBootServletInitializer {
 	private String snmpAddress;
 
 	@Bean
-	public SNMPManager snmpManager(){
+	public SNMPManager snmpManager() throws IOException {
 		return new SNMPManager(snmpAddress);
 	}
 }

@@ -34,8 +34,9 @@ public class SNMPManager implements Serializable {
      *
      * @param address
      */
-    public SNMPManager(String address) {
+    public SNMPManager(String address) throws IOException {
         this.address = address;
+        this.start();
     }
 
     public static void main(String[] args) throws IOException {
@@ -58,7 +59,7 @@ public class SNMPManager implements Serializable {
      *
      * @throws IOException
      */
-    public void start() throws IOException {
+    private void start() throws IOException {
         TransportMapping transport = new DefaultUdpTransportMapping();
         snmp = new Snmp(transport);
         // Do not forget this line!

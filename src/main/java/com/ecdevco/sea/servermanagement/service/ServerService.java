@@ -30,8 +30,6 @@ public class ServerService {
     public MemInfo getMemInfo() {
         MemInfo memInfo = new MemInfo();
         try {
-            snmpManager.start();
-
             memInfo.setTotal(Long.parseLong(snmpManager.getAsString(new OID(".1.3.6.1.4.1.2021.4.5.0"))));
             memInfo.setFree(Long.parseLong(snmpManager.getAsString(new OID(".1.3.6.1.4.1.2021.4.6.0"))));
             memInfo.setBuffered(Long.parseLong(snmpManager.getAsString(new OID(".1.3.6.1.4.1.2021.4.14.0"))));
@@ -47,8 +45,6 @@ public class ServerService {
     public CPUInfo getCPUInfo() {
         CPUInfo cpuInfo = new CPUInfo();
         try {
-            snmpManager.start();
-
             cpuInfo.setIdle(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.4.1.2021.11.11.0"))));
             cpuInfo.setRawIdle(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.4.1.2021.11.53.0"))));
             cpuInfo.setRawKernel(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.4.1.2021.11.55.0"))));
@@ -70,8 +66,6 @@ public class ServerService {
     public StorageInfo getStorageInfo() {
         StorageInfo storageInfo = new StorageInfo();
         try {
-            snmpManager.start();
-
             storageInfo.setTotal(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.2.1.25.2.3.1.5.31"))));
             storageInfo.setUsed(Long.parseLong(snmpManager.getAsString(new OID("1.3.6.1.2.1.25.2.3.1.6.31"))));
 
